@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TaskGrid - タスク管理アプリケーション
 
-## Getting Started
+## 概要
 
-First, run the development server:
+TaskGrid は、「時間管理のマトリクス」の考え方を基にしたタスク管理ツールです。タスクを「緊急度 × 重要度」の 2 軸で整理し、優先順位を視覚的に管理することができます。
 
-```bash
+## 特徴
+
+- タスクを 4 つのカテゴリーで管理
+
+  - 重要かつ緊急
+  - 重要だが緊急でない
+  - 重要でないが緊急
+  - 重要でも緊急でもない
+
+- 重要かつ緊急なタスクは 3 つまでに制限
+
+  - 本当に重要で緊急なタスクに集中するための機能
+  - オーバーフローを防ぎ、優先順位の明確化をサポート
+
+- シンプルで直感的な UI
+  - ドラッグ＆ドロップなしでカテゴリー間の移動が可能
+  - クリアな視覚的表示で優先順位を瞬時に把握
+
+## 技術スタック
+
+- Next.js
+- Firebase Authentication
+- Cloud Firestore
+- TailwindCSS
+
+## 主な機能
+
+1. ユーザー認証
+
+   - メールアドレスによるサインアップ/ログイン
+   - セキュアなユーザーデータの管理
+
+2. タスク管理
+
+   - タスクの追加/削除
+   - カテゴリー間の移動
+   - リアルタイムでの更新
+
+3. レスポンシブデザイン
+   - モバイル/デスクトップ両対応
+   - 使いやすいインターフェース
+
+## インストール方法
+
+````bash
+# リポジトリのクローン
+git clone [リポジトリURL]
+
+# 依存関係のインストール
+npm install
+
+# 開発サーバーの起動
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 環境設定
+1. Firebaseプロジェクトの作成
+2. 環境変数の設定
+   ```env
+   NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
+   NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_auth_domain
+   NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+   NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+   NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+   NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 使用方法
+1. アカウント作成またはログイン
+2. タスクの追加
+3. カテゴリーの選択
+4. 必要に応じてタスクの移動や削除
+````
