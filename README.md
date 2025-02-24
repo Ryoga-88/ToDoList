@@ -48,7 +48,7 @@ TaskGrid は、「時間管理のマトリクス」の考え方を基にした�
 
 ## インストール方法
 
-````bash
+```bash
 # リポジトリのクローン
 git clone [リポジトリURL]
 
@@ -57,9 +57,11 @@ npm install
 
 # 開発サーバーの起動
 npm run dev
+```
 
 ## 環境設定
-1. Firebaseプロジェクトの作成
+
+1. Firebase プロジェクトの作成
 2. 環境変数の設定
    ```env
    NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
@@ -68,10 +70,11 @@ npm run dev
    NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_storage_bucket
    NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
    NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
+   ```
 
 ## 使用方法
+
 1. アカウント作成またはログイン
 2. タスクの追加
 3. カテゴリーの選択
 4. 必要に応じてタスクの移動や削除
-````
