@@ -42,7 +42,6 @@ const AuthForm = () => {
       }
     } catch (error) {
       switch (error.code) {
-        // ログインエラー
         case "auth/invalid-email":
           setError("メールアドレスの形式が正しくありません。");
           break;
@@ -55,7 +54,6 @@ const AuthForm = () => {
         case "auth/wrong-password":
           setError("パスワードが間違っています。");
           break;
-        // 登録エラー
         case "auth/email-already-in-use":
           setError("このメールアドレスは既に使用されています。");
           break;
@@ -71,7 +69,6 @@ const AuthForm = () => {
 
   return (
     <div className="flex flex-col md:flex-row h-screen">
-      {/* 左側（タイトル） */}
       <div className="w-full md:w-1/2 h-1/2 md:h-full bg-teal-600 flex items-center justify-start px-16">
         <div>
           <h1 className="text-3xl md:text-5xl font-bold md:font-extrabold text-white mb-2">
@@ -97,14 +94,12 @@ const AuthForm = () => {
             {isLogin ? "ログイン" : "アカウント登録"}
           </h2>
 
-          {/* エラーメッセージ */}
           {error && (
             <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded">
               {error}
             </div>
           )}
 
-          {/* メールアドレス入力 */}
           <div className="w-full mb-4">
             <label
               htmlFor="email"
@@ -123,7 +118,6 @@ const AuthForm = () => {
             />
           </div>
 
-          {/* パスワード入力 */}
           <div className="w-full mb-6">
             <label
               htmlFor="password"
@@ -142,7 +136,6 @@ const AuthForm = () => {
             />
           </div>
 
-          {/* 送信ボタン */}
           <button
             type="submit"
             className={`w-full px-6 py-3 text-white rounded-lg focus:outline-none mb-4 ${
@@ -155,7 +148,6 @@ const AuthForm = () => {
             {isLogin ? "ログイン" : "アカウント作成"}
           </button>
 
-          {/* 切り替えボタン */}
           <p className="text-center text-gray-600">
             {isLogin
               ? "アカウントをお持ちでない方は"
